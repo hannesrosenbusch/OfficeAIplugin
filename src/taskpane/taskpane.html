@@ -1,0 +1,78 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom AI Editor</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+     <!-- Office JavaScript API -->
+    <link rel="shortcut icon" href="../../assets/ailogo.png" type="image/x-icon">
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+<!--     <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="60" height="60" src="../../assets/ailogo.png" alt="Contoso" title="Contoso" />
+        <!-- <h3 class="ms-font-su"> Highlight & Edit</h3>
+    </header> -->
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+    <img src="../../assets/ailogo.png" alt="Image description" height="26" width="26">
+    
+    <div class="custom-div">
+    <h3>EDITOR</h3>
+    <textarea id="myTextarea" rows="2" cols="33" class="cool-textarea" placeholder="Get edits in highlighted text (left)"></textarea>
+    <input type="submit" value="Implement edit" id="custm" class="cool-button">
+</div>
+    <div class="tight-container">
+    <!-- BUTTONS -->
+        <!-- Shorten -->
+        <div role="button" id="shorten" class="tight-button">
+            <span class="tight-Button-label">Shorten</span>
+        </div>
+        <!-- PARAGRAPH SUMMARY -->
+        <div role="button" id="correct" class="tight-button">
+            <span class="tight-Button-label">Correct</span>
+        </div>
+        <!-- PARAGRAPH SUMMARY -->
+        <div role="button" id="paragrSumm" class="tight-button">
+            <span class="tight-Button-label">Summarize</span>
+        </div>
+    </div>
+    
+    <h3>CHATBOT</h3>
+    
+   <!--  <hr style="height:5px;width:100%;background-color: black;">  -->   
+    <div class="custom-div">
+    <textarea id="chatbotInput" rows="2" cols="33" class="cool-textarea" placeholder="Get chatbot response (below)"></textarea>
+    <input type="submit" value="Get response" id="custmChat" class="cool-button">
+    <textarea id="chatbotOutput" rows="18" cols="33" class="cool-textarea" readonly></textarea>
+    </div>
+        <!-- API KEY -->
+        <div class="collapsible">
+            <button class="collapsible-btn">LINK OPENAI</button>
+            <div class="content">
+                <input type="text" id="userkey" placeholder="Your Api Key" autocomplete="off">
+            </div>
+            </div>
+
+
+    </main>
+</body>
+
+</html>
